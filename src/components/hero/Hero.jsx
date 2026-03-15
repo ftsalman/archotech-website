@@ -12,32 +12,31 @@ export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-     {
-    title: "Architectural Design",
-    text: "Creative architectural planning and modern house designs tailored to your lifestyle and vision.",
+  {
+    title: "Homart Architects & Builders",
+    text: "We specialize in architectural design, construction, and interior solutions. Our mission is to create modern, functional, and beautiful spaces that elevate the way you live.",
     image: "/imgs/hero-bg.webp",
   },
- 
+
   {
     title: "Building Construction",
     text: "Professional residential and commercial construction services with high-quality materials.",
     image: "https://i.pinimg.com/736x/93/10/9a/93109afa8ea24d0e0145750a40f13fca.jpg",
   },
-   {
+
+
+
+  {
     title: "Interior Design",
     text: "Elegant and functional interior design solutions that transform your living spaces beautifully.",
     image: "https://i.pinimg.com/1200x/8f/96/c9/8f96c9e18f4dc0aaf6f9ab08b2a996ed.jpg",
   },
-    {
+
+  {
     title: "HADD Division",
     text: "Homart Approvals and Documentation Division handles approvals, permits, and technical drawings.",
     image: "https://i.pinimg.com/736x/41/b0/44/41b044cb9856e20792bf124b08d974d4.jpg",
   },
-  // {
-  //   title: "3D Visualization",
-  //   text: "Realistic 3D elevation and walkthrough designs to help you visualize your dream home before construction.",
-  //   image: "https://i.pinimg.com/1200x/8e/8e/3b/8e8e3b9a94ba332b50171df502a94ab1.jpg",
-  // }
   ];
 
   /* Auto Slide Change */
