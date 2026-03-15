@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+* {
+  box-sizing: border-box;
+  /* font-family: "Inter", sans-serif; */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  
+}
+
+.panel-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Chrome, Edge, Safari */
+.panel-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.panel-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+  border: 2px solid #f1f1f1;
+}
+
+.panel-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Hide scrollbar for smoother mobile look */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scrollbar styles for .table-Scrollbar */
+.table-Scrollbar::-webkit-scrollbar {
+  width: 100px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.table-Scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 9999px;
+  scrollbar-gutter: stable;
+}
+
+.table-Scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #9ca3af;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.table-Scrollbar::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Firefox Support */
+.table-Scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
