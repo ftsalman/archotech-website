@@ -44,7 +44,7 @@ export const OurServices = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-gray-100 py-24 px-6 lg:px-20 overflow-hidden"
+      className="bg-brand-light py-24 px-6 lg:px-20 overflow-hidden text-black"
     >
       <motion.div
         initial={{ y: 60, opacity: 0 }}
@@ -80,7 +80,7 @@ export const OurServices = () => {
             initial={{ y: 40, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : {}}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="mt-10 text-gray-600 text-xl leading-relaxed space-y-6"
+            className="mt-10 text-black/60 text-lg leading-relaxed space-y-6 font-sans"
           >
             <p>
               Our services are focused on creating spaces that are both
@@ -122,14 +122,14 @@ export const OurServices = () => {
               transition={{ type: "spring", stiffness: 300 }}
               onMouseEnter={() => changeImage(service.image, index)}
               onClick={() => changeImage(service.image, index)}
-              className={`border-b border-gray-300 py-8 cursor-pointer transition-all duration-300 group
+              className={`border-b border-black/10 py-8 cursor-pointer transition-all duration-300 group
               ${
                 activeIndex === index
                   ? "text-black"
-                  : "text-gray-500 hover:text-black"
+                  : "text-black/40 hover:text-black"
               }`}
             >
-              <h3 className="text-3xl lg:text-5xl font-light group-hover:font-normal transition-all duration-300">
+              <h3 className="text-4xl lg:text-6xl font-light tracking-tighter group-hover:font-normal transition-all duration-300">
                 {service.name}
               </h3>
 

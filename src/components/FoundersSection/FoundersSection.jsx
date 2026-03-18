@@ -19,23 +19,17 @@ export const FoundersSection = () => {
   ];
 
   return (
-    <section
-      className="relative py-24 px-6 bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('https://i.pinimg.com/1200x/8b/04/0e/8b040e1db190fa0e5850486d7634cb26.jpg')"
-      }}
-    >
+    <section className="relative py-24 md:py-32 px-6 bg-brand-light text-black overflow-hidden">
+      
+      {/* Subtle Background Accent */}
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-black/5 to-transparent pointer-events-none"></div>
 
-      {/* overlay */}
-      <div className="absolute inset-0 bg-white/60"></div>
-
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative max-w-7xl mx-auto z-10">
 
         {/* Title */}
-        <div className="mb-20 text-center">
-          <h2 className="text-4xl md:text-6xl font-light text-gray-900">
-            Meet Our Founders
+        <div className="mb-20 text-center md:text-left">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter">
+            Meet the founders
           </h2>
         </div>
 
@@ -53,26 +47,26 @@ export const FoundersSection = () => {
             >
 
               {/* Image */}
-              <div className="w-[220px] h-[220px] md:w-[360px] md:h-[360px] mb-6">
+              <div className="w-full max-w-[320px] aspect-[4/5] mb-8 overflow-hidden rounded-none border border-black/10">
                 <img
                   src={founder.image}
                   alt={founder.name}
-                  className="w-full h-full object-cover rounded-full hover:scale-105 transition-all duration-500 shadow-lg"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700"
                 />
               </div>
 
               {/* Name */}
-              <h3 className="text-4xl font-extrabold text-gray-900">
+              <h3 className="text-2xl md:text-3xl font-normal tracking-tight mb-2">
                 {founder.name}
               </h3>
 
               {/* Role */}
-              <p className="text-gray-500 mb-3">
+              <p className="text-brand-red uppercase tracking-widest text-xs font-sans mb-4">
                 {founder.role}
               </p>
 
               {/* Bio */}
-              <p className="text-gray-600 max-w-md leading-relaxed">
+              <p className="text-black/60 max-w-md leading-relaxed font-sans mt-4">
                 {founder.bio}
               </p>
 

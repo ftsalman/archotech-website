@@ -1,37 +1,26 @@
 import { cva } from "class-variance-authority";
-import React from "react";
 
 export const buttonVariants = cva(
-  "text-sm font-medium rounded-lg flex  cursor-pointer items-center justify-center gap-2 border border-transparent transiton-colors duration-300 disabled:cursor-not-allowed outline-0",
+  "text-sm font-medium rounded-full flex cursor-pointer items-center justify-center gap-2 border border-transparent transition-all duration-300 disabled:cursor-not-allowed outline-0",
   {
     variants: {
       variant: {
-        "brand-primary-gradient":
-          "text-black bg-gradient-to-r from-[#FFC931] to-[#C39207]/80 hover:opacity-90 focus:ring-[3px] focus:ring-brand-primary-200 focus:border-brand-primary-600 disabled:bg-gray-200 disabled:text-gray-400",
         default:
-          "text-white bg-brand-secondary-500 hover:opacity-90 focus:ring-[3px] focus:ring-brand-secondary-100 focus:border-brand-secondary-600 shadow-black disabled:bg-gray-200 disabled:text-gray-400",
-        "brand-primary":
-          "text-black bg-brand-primary-500 hover:opacity-90 focus:ring-[3px] focus:ring-brand-primary-200 focus:border-brand-primary-600 disabled:bg-gray-200 disabled:text-gray-400",
-        "brand-secondary":
-          "text-white bg-brand-secondary-500 hover:opacity-90 focus:ring-[3px] focus:ring-brand-secondary-100 focus:border-brand-secondary-600 shadow-black disabled:bg-gray-200 disabled:text-gray-400",
+          "text-white bg-brand-dark hover:opacity-90 disabled:bg-white/10 disabled:text-white/40 border border-white/20 hover:border-white/50",
         secondary:
-          "font-medium bg-transparent border border-gray-200 text-gray-800 hover:bg-brand-secondary-50 shadow-sm shadow-brand-secondary-50 focus:ring-[3px] focus:ring-brand-secondary-50 disabled:bg-gray-200 disabled:text-gray-400",
-        tertiary:
-          "bg-transparent text-gray-800 focus:ring-[3px] focus:ring-brand-secondary-100 focus:border-brand-secondary-600",
+          "text-brand-dark bg-white hover:bg-white/90 disabled:bg-white/50 disabled:text-brand-dark/50",
+        ghost:
+          "bg-transparent text-white hover:bg-white/10 disabled:text-white/40",
         danger:
-          "bg-red-500 text-white focus:ring-[3px] focus:ring-red-200 focus:border-red-600",
-        "danger-outlined":
-          "border-red-500 text-red-500 border focus:shadow-red-200 focus:ring-[3px] focus:ring-red-200",
-        success:
-          "bg-green-500 text-white focus:ring-[3px] focus:ring-green-200 focus:border-green-600",
+          "bg-brand-red text-white hover:bg-brand-red/90",
       },
       size: {
-        default: "h-11 px-4 py-[10px]",
-        xs: "h-[24px] px-4 py-2.5 text-sm",
-        sm: "h-[32px] px-4 py-[6px] text-xs",
-        md: "h-[40px] px-4 py-2.5 text-sm",
-        lg: "h-[52px] px-5 py-[14px]",
-        xl: "h-[56px] p-4",
+        default: "h-12 px-6 py-3",
+        xs: "h-[24px] px-3 py-1 text-xs",
+        sm: "h-[36px] px-4 py-2 text-xs",
+        md: "h-[40px] px-5 py-2 text-sm",
+        lg: "h-[50px] px-8 py-3 text-base",
+        xl: "h-[56px] px-10 py-4 text-lg",
       },
     },
     defaultVariants: {

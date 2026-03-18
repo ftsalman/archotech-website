@@ -25,7 +25,6 @@ export const TalkSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-
       // Text animation
       gsap.from(contentRef.current.children, {
         y: 40,
@@ -50,7 +49,6 @@ export const TalkSection = () => {
           scrub: true,
         },
       });
-
     }, sectionRef);
 
     return () => ctx.revert();
@@ -78,10 +76,7 @@ export const TalkSection = () => {
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-[81.25rem] px-5 xl:px-[4.375rem]">
-        <div
-          ref={contentRef}
-          className="mx-auto max-w-[54rem] text-center"
-        >
+        <div ref={contentRef} className="mx-auto max-w-[54rem] text-center">
           <p className="mb-4 text-[0.78rem] uppercase tracking-[0.22em] text-white/60">
             Contact
           </p>

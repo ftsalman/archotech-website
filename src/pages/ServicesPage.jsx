@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageContainer } from "../components/ui/PageContainer";
 import { motion } from "framer-motion";
 import Button from "../components/ui/button/Button";
@@ -28,15 +28,19 @@ const help = [
 ];
 
 export const ServicesPage = () => {
-  const [scrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <PageContainer className="px-0 py-0">
-
       {/* HERO */}
       <div className="relative w-full h-[500px] md:h-[650px] lg:h-[750px]">
-
         <img
           src="https://cdn.prod.website-files.com/5eb576c61be1ba0d46d82e8c/5ec69d0921f4a95532603871_Kloud_LOW_3-p-800.jpeg"
           alt="Services"
@@ -46,7 +50,6 @@ export const ServicesPage = () => {
         <div className="absolute inset-0 bg-black/50"></div>
 
         <div className="absolute inset-0 flex flex-col items-start justify-center px-6 md:px-16 lg:px-40 text-white">
-
           <motion.h4
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,7 +79,7 @@ export const ServicesPage = () => {
               size="lg"
               onClick={() => navigate("/contact")}
               className={`relative overflow-hidden px-8 rounded-full border font-semibold group
-              ${scrolled ? "border-black text-black" : "border-white text-white"}`}
+              ${scrolled ? "border-black text-black" : "border-white text-black"}`}
             >
               <span className="relative z-10 transition duration-300 group-hover:text-black">
                 Get in Touch
@@ -85,25 +88,20 @@ export const ServicesPage = () => {
               <span className="absolute inset-0 bg-white scale-y-0 origin-bottom transition-transform duration-300 group-hover:scale-y-100"></span>
             </Button>
           </motion.div>
-
         </div>
       </div>
 
-      <Brands/>
+      <Brands />
 
       {/* WHAT WE OFFER */}
-   <OurServices/>
+      <OurServices />
 
+      <ScrollCards />
 
-   <ScrollCards/>
-
-
-   <OurProjects/>
-
+      <OurProjects />
 
       {/* HOW WE HELP */}
       <section className="bg-[#f2f2f2] py-20 md:py-24 px-6 md:px-16 lg:px-40">
-
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +125,6 @@ export const ServicesPage = () => {
               viewport={{ once: true }}
               className="bg-white p-8 md:p-10 rounded-sm shadow-sm hover:shadow-lg transition"
             >
-
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 mb-6">
                 {item.num}
               </div>
@@ -136,16 +133,11 @@ export const ServicesPage = () => {
                 {item.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
-                {item.desc}
-              </p>
-
+              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
             </motion.div>
           )}
         />
-
       </section>
-
     </PageContainer>
   );
 };

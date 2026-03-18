@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageContainer } from "../components/ui/PageContainer";
 import Button from "../components/ui/button/Button";
 import { useNavigate } from "react-router-dom";
@@ -12,12 +12,16 @@ export const AboutPage = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <PageContainer className="px-0 py-0">
-
       {/* HERO SECTION */}
       <div className="relative w-full h-[500px] md:h-[650px] lg:h-[750px]">
-
         {/* Background */}
         <img
           src="/imgs/aboutUs.png"
@@ -30,7 +34,6 @@ export const AboutPage = () => {
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-start justify-center px-6 md:px-16 lg:px-40 text-white">
-
           <motion.h4
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -60,7 +63,7 @@ export const AboutPage = () => {
               size="lg"
               onClick={() => navigate("/contact")}
               className={`relative overflow-hidden px-8 rounded-full border font-semibold group
-              ${scrolled ? "border-black text-black" : "border-white text-white"}
+              ${scrolled ? "border-black text-black" : "border-white text-black"}
             `}
             >
               <span className="relative z-10 transition duration-300 group-hover:text-black">
@@ -70,13 +73,11 @@ export const AboutPage = () => {
               <span className="absolute inset-0 bg-white scale-y-0 origin-bottom transition-transform duration-300 group-hover:scale-y-100"></span>
             </Button>
           </motion.div>
-
         </div>
       </div>
 
       {/* HOW WE HELP */}
       <div className="bg-[#f2f2f2] py-16 md:py-24 px-6 md:px-16 lg:px-40">
-
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,26 +89,24 @@ export const AboutPage = () => {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
           {/* CARD */}
           {[
             {
               num: "01",
               title: "Expert design consultations",
-              desc: "Our experienced team of interior designers is here to guide you through the creative process. From selecting the perfect color palette to optimizing spatial layouts."
+              desc: "Our experienced team of interior designers is here to guide you through the creative process. From selecting the perfect color palette to optimizing spatial layouts.",
             },
             {
               num: "02",
               title: "Customization for uniqueness",
-              desc: "Make your home truly yours with our customization options. Whether it's personalized furniture or bespoke decor."
+              desc: "Make your home truly yours with our customization options. Whether it's personalized furniture or bespoke decor.",
             },
             {
               num: "03",
               title: "Quality assurance",
-              desc: "We take pride in delivering products of the highest quality. Our commitment to craftsmanship ensures every piece meets our standards."
-            }
+              desc: "We take pride in delivering products of the highest quality. Our commitment to craftsmanship ensures every piece meets our standards.",
+            },
           ].map((card, index) => (
-
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 60 }}
@@ -116,7 +115,6 @@ export const AboutPage = () => {
               viewport={{ once: true }}
               className="bg-white p-8 md:p-10 rounded-sm shadow-sm hover:shadow-lg transition"
             >
-
               <div className="w-14 h-14 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 mb-6">
                 {card.num}
               </div>
@@ -125,20 +123,14 @@ export const AboutPage = () => {
                 {card.title}
               </h3>
 
-              <p className="text-gray-600 leading-relaxed">
-                {card.desc}
-              </p>
-
+              <p className="text-gray-600 leading-relaxed">{card.desc}</p>
             </motion.div>
-
           ))}
-
         </div>
       </div>
 
       {/* OVERLAP SECTIONS */}
       <div>
-
         <OverlapSection
           image="https://cdn.prod.website-files.com/67409478e7d06cee556594cb/6876481a725738dce1dffb55_0101.webp"
           title="Responsive customer support"
@@ -159,7 +151,6 @@ export const AboutPage = () => {
           subtitle="Whether you're revamping a single room"
           description="Explore our blog and design tips."
         />
-
       </div>
 
       {/* TEAM */}
@@ -170,7 +161,6 @@ export const AboutPage = () => {
 
       {/* CONTACT */}
       <TalkSection />
-
     </PageContainer>
   );
 };

@@ -83,7 +83,7 @@ export const Brands = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-gray-100 py-14 overflow-hidden"
+      className="w-full bg-white py-14 overflow-hidden"
       onMouseEnter={pauseMarquee}
       onMouseLeave={resumeMarquee}
     >
@@ -97,11 +97,8 @@ export const Brands = () => {
             <img
               src={brand.logo}
               alt={brand.name}
-              className="h-10 w-40 object-contain"
+              className="h-12 w-48 object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300 mix-blend-multiply"
             />
-            <span className="text-2xl text-black font-semibold">
-              {brand.name}
-            </span>
           </div>
         ))}
       </div>

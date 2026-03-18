@@ -104,17 +104,17 @@ export const TeamSection = () => {
   };
 
   return (
-    <section className="py-16 px-4 lg:px-12 space-y-12 overflow-hidden">
+    <section className="py-20 md:py-32 px-4 lg:px-12 space-y-12 overflow-hidden bg-brand-light text-black">
 
       {/* Title */}
       <motion.h2
-        className="text-3xl md:text-5xl lg:text-6xl font-semibold"
+        className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter"
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        Our team of specialist
+        Our team of specialists
       </motion.h2>
 
       {/* Scroll Container */}
@@ -142,14 +142,13 @@ export const TeamSection = () => {
                 className="team-card
                 min-w-[260px]
                 sm:min-w-[320px]
-                lg:min-w-[400px]
+                lg:min-w-[420px]
                 border-none
-                rounded-b-sm
-                rounded-t-none
+                rounded-none
                 overflow-hidden
-                shadow-md
-                hover:shadow-xl
-                transition p-0"
+                shadow-none
+                bg-transparent
+                p-0"
               >
                 {/* Image */}
                 <motion.img
@@ -161,27 +160,25 @@ export const TeamSection = () => {
                 />
 
                 {/* Content */}
-                <div className="p-6 lg:p-10 flex justify-between items-center">
+                <div className="pt-6 pb-2 flex justify-between items-start">
                   <div>
-                    <h3 className="text-lg lg:text-2xl font-semibold">
+                    <h3 className="text-xl lg:text-3xl font-normal tracking-tight mb-2 text-black">
                       {item.name}
                     </h3>
 
-                    <p className="text-sm lg:text-lg text-gray-500">
+                    <p className="text-sm lg:text-base font-sans text-black/60">
                       {item.role}
                     </p>
                   </div>
 
                   <Button
                     onClick={handleArrowClick}
-                    variant="secondary"
-                    size="md"
                     className="rounded-full
                     h-10 w-10
-                    lg:h-14 lg:w-14
-                    p-2
-                    bg-gray-100
-                    border-gray-50"
+                    lg:h-12 lg:w-12
+                    p-0
+                    bg-black/10 text-black
+                    hover:bg-brand-red hover:text-white border-none transition-colors duration-300 flex items-center justify-center shrink-0"
                   >
                     <IconArrowForward size="20" />
                   </Button>

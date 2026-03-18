@@ -4773,7 +4773,7 @@ IconBeachAccess.propTypes = ICON_PROP_TYPES;
 
 export const IconShoppingCart = ({ size = "16", color = "currentColor" }) => {
   return (
-   <svg
+    <svg
       width={size}
       height={size}
       viewBox="0 0 17 17"
@@ -4798,7 +4798,7 @@ export const IconMinimaze = ({ size = "16", color = "currentColor" }) => {
       height={size}
       viewBox="0 -960 960 960"
       width={size}
-      fill="#FFFFFF"
+      fill="#000000"
     >
       <path d="M240-120v-80h480v80H240Z" />
     </svg>

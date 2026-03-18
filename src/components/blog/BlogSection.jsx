@@ -4,7 +4,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../ui/button/Button";
 import { List } from "../ui/List";
 import { Card } from "../ui/Card";
-import { IconArrowLeftAlt, IconArrowRightAlt } from "../../assets/icons/interfaceIcons2";
+import {
+  IconArrowLeftAlt,
+  IconArrowRightAlt,
+} from "../../assets/icons/interfaceIcons2";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,56 +88,63 @@ export const BlogSection = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full py-24 bg-[#f6f6f6] flex justify-center"
-    >
-      <div className="max-w-[1400px] w-full px-6">
-        <div ref={titleRef} className="mb-14 flex items-center justify-between">
-          <h2 className="text-6xl font-semibold tracking-tight">
-            ProForma blog insights
-          </h2>
-        </div>
+    <>
+      <section
+        ref={sectionRef}
+        className="w-full py-24 bg-[#f6f6f6] flex justify-center"
+      >
+        <div className="max-w-[1400px] w-full px-6">
+          <div
+            ref={titleRef}
+            className="mb-14 flex items-center justify-between"
+          >
+            <h2 className="text-6xl font-semibold tracking-tight">
+              ProForma blog insights
+            </h2>
+          </div>
 
-        <List
-          data={blogs}
-          uniqueKey="id"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          render={(blog) => (
-            <div
-              className="blog-card h-full"
-              onMouseEnter={handleCardEnter}
-              onMouseLeave={handleCardLeave}
-            >
-              <Card className="h-full rounded-none bg-white overflow-hidden shadow-md hover:shadow-xl transition group p-0 flex flex-col">
-                <div className="overflow-hidden h-[300px] w-full">
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                <div className="p-8 flex flex-col flex-grow">
-                  <p className="text-gray-500 text-base mb-3">{blog.date}</p>
-
-                  <h3 className="text-2xl font-medium leading-tight mb-6 flex-grow">
-                    {blog.title}
-                  </h3>
-
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                    <span className="text-gray-500 text-base">{blog.read}</span>
-
-                    <Button className="w-15 h-15 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 group-hover:text-white transition-colors cursor-pointer">
-                      <IconArrowRightAlt/>
-                    </Button>
+          <List
+            data={blogs}
+            uniqueKey="id"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            render={(blog) => (
+              <div
+                className="blog-card h-full"
+                onMouseEnter={handleCardEnter}
+                onMouseLeave={handleCardLeave}
+              >
+                <Card className="h-full rounded-none bg-white overflow-hidden shadow-md hover:shadow-xl transition group p-0 flex flex-col">
+                  <div className="overflow-hidden h-[300px] w-full">
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                    />
                   </div>
-                </div>
-              </Card>
-            </div>
-          )}
-        />
-      </div>
-    </section>
+
+                  <div className="p-8 flex flex-col flex-grow">
+                    <p className="text-gray-500 text-base mb-3">{blog.date}</p>
+
+                    <h3 className="text-2xl font-medium leading-tight mb-6 flex-grow">
+                      {blog.title}
+                    </h3>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                      <span className="text-gray-500 text-base">
+                        {blog.read}
+                      </span>
+
+                      <Button className="w-15 h-15 p-2 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 group-hover:text-white transition-colors cursor-pointer">
+                        <IconArrowRightAlt size="20" />
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            )}
+          />
+        </div>
+      </section>
+    </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "../ui/button/Button";
 import { IconShoppingCart } from "../../assets/icons/interfaceIcons2";
 
@@ -11,119 +11,140 @@ const NAV_LINKS = [
   { label: "Blog", path: "/blog" },
 ];
 
-const navContainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const navItem = {
-  hidden: { y: -24, opacity: 0 },
-  show: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
 export const Navbar = () => {
   const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <motion.nav
-      variants={navContainer}
-      initial="hidden"
-      animate="show"
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500
-      ${scrolled ? "bg-white shadow-md" : "bg-transparent backdrop-blur-[50px]"}`}
-    >
-      <div className="container mx-auto px-4 h-[7.4rem] sm:px-8 py-3 flex items-center justify-between">
+    <>
+      {/* NAVBAR */}
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500
+        ${scrolled ? "bg-white shadow-md" : "bg-transparent backdrop-blur-[50px]"}`}
+      >
+        <div className="container mx-auto px-4 sm:px-8 h-[70px] flex items-center justify-between">
+          {/* LOGO */}
+          <Link to="/">
+            <div
+              className={`transition-colors duration-300 ${scrolled ? "text-black" : "text-white"}`}
+            >
+              <div className="flex flex-col select-none">
+                <span className="font-display italic font-light text-4xl leading-none">
+                  Homart
+                </span>
+                {/* <span className="font-display font-medium text-2xl tracking-tighter leading-none -mt-1">forma</span> */}
+              </div>
+            </div>
+          </Link>
 
-        <Link to="/">
-          <motion.h2
-            variants={navItem}
-            className={`text-2xl md:text-6xl font-extrabold leading-tight transition
+          <ul
+            className={`hidden md:flex gap-10 items-center font-sans uppercase tracking-widest text-xs font-semibold transition-colors duration-300
             ${scrolled ? "text-black" : "text-white"}`}
           >
-            Homart
-          </motion.h2>
-        </Link>
+            {NAV_LINKS.map((item, index) => (
+              <li key={index} className="overflow-hidden group">
+                <Link
+                  to={item.path}
+                  className="relative flex flex-col h-[14px]"
+                >
+                  <span className="translate-y-0 group-hover:-translate-y-full transition-transform duration-300">
+                    {item.label}
+                  </span>
+                  <span className="absolute top-full text-brand-red group-hover:-translate-y-full transition-transform duration-300">
+                    {item.label}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        <ul
-          className={`hidden md:flex gap-8 items-center transition
-          ${scrolled ? "text-black" : "text-white"}`}
-        >
-          {NAV_LINKS.map((item, index) => (
-            <motion.li key={index} variants={navItem}>
-              <Link
-                to={item.path}
-                className="relative block overflow-hidden h-6 group"
-              >
-                <span className="block transition-transform duration-300 group-hover:-translate-y-full">
-                  {item.label}
-                </span>
+          {/* RIGHT SIDE (DESKTOP) */}
+          <div className="hidden md:flex items-center gap-6">
+            <button
+              className={`transition-colors duration-300 hover:opacity-70 ${scrolled ? "text-black" : "text-white"}`}
+            >
+              <IconShoppingCart size="20" />
+            </button>
 
-                <span className="block absolute left-0 top-full transition-transform duration-300 group-hover:-translate-y-full">
-                  {item.label}
-                </span>
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
-
-        <motion.div
-          variants={navItem}
-          className="hidden md:flex items-center gap-4"
-        >
-          <Button
-            variant="tertiary"
-            size="md"
-            className={`relative ${scrolled ? "text-black" : "text-white"}`}
-          >
-            <span className="absolute bottom-1 right-2 flex items-center justify-center rounded-full h-4 w-4 bg-red-600 text-xs text-white">
-              1
-            </span>
-
-            <IconShoppingCart size="24" />
-          </Button>
-
-          <motion.div whileHover={{ scale: 1.05 }}>
             <Button
-              variant="secondary"
-              size="lg"
               onClick={() => navigate("/contact")}
-              className={`relative overflow-hidden px-8 rounded-full border font-semibold group
-              ${
+              variant="secondary"
+              className={`px-6 py-2 h-10 rounded-full border text-xs tracking-widest uppercase transition-colors duration-300 ${
                 scrolled
-                  ? "border-black text-black"
-                  : "border-white text-white"
+                  ? "border-gray-200 text-black hover:bg-black/5 hover:text-black"
+                  : "border-white/30 text-black hover:bg-white hover:text-black"
               }`}
             >
-              <span className="relative z-10 transition duration-300 group-hover:text-black">
-                Contact
-              </span>
-
-              <span className="absolute inset-0 bg-white scale-y-0 origin-bottom transition-transform duration-300 group-hover:scale-y-100"></span>
+              Contact
             </Button>
-          </motion.div>
-        </motion.div>
+          </div>
 
-      </div>
-    </motion.nav>
+          {/* 🍔 MOBILE MENU BUTTON */}
+          <div className="md:hidden">
+            <button onClick={() => setMenuOpen(!menuOpen)}>
+              <div className="flex flex-col gap-1">
+                <span
+                  className={`block w-6 h-0.5 transition ${
+                    scrolled ? "bg-black" : "bg-white"
+                  }`}
+                ></span>
+                <span
+                  className={`block w-6 h-0.5 transition ${
+                    scrolled ? "bg-black" : "bg-white"
+                  }`}
+                ></span>
+                <span
+                  className={`block w-6 h-0.5 transition ${
+                    scrolled ? "bg-black" : "bg-white"
+                  }`}
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* 📱 MOBILE MENU DROPDOWN */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-[70px] left-0 w-full bg-white z-40 shadow-md md:hidden"
+          >
+            <div className="flex flex-col items-center py-6 gap-6">
+              {NAV_LINKS.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-lg font-medium"
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <Button
+                onClick={() => {
+                  navigate("/contact");
+                  setMenuOpen(false);
+                }}
+                className="px-6 rounded-full border border-black"
+              >
+                Contact
+              </Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };

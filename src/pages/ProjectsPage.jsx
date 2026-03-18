@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { PageContainer } from "../components/ui/PageContainer";
 import { ProjectCard } from "../components/projectsCard/ProjectCard";
 import Button from "../components/ui/button/Button";
+import { motion } from "framer-motion";
 
-export const projects = [
+const projects = [
   {
     id: 1,
     title: "The Green Bridge Urban",
@@ -46,12 +47,24 @@ export const ProjectsPage = () => {
 
   return (
     <PageContainer>
-      <div className="max-w-[100rem] mx-auto  py-20">
+      <div className="max-w-400 mx-auto px-6 py-20">
         {/* Header */}
         <div className="flex justify-between items-center mb-16 flex-wrap gap-6">
-          <h1 className="text-7xl font-light">Projects</h1>
+          <motion.h1 
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-light"
+          >
+            Projects
+          </motion.h1>
 
-          <div className="flex gap-4 flex-wrap">
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex gap-4 flex-wrap"
+          >
             {categories.map((cat) => (
               <Button
                 key={cat}
@@ -68,11 +81,24 @@ export const ProjectsPage = () => {
                 {cat}
               </Button>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-16">
+        <motion.div 
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.3
+              }
+            }
+          }}
+          className="space-y-16"
+        >
           {filtered
             .reduce((rows, _, index) => {
               if (index % 2 === 0) {
@@ -84,8 +110,12 @@ export const ProjectsPage = () => {
               const reverse = rowIndex % 2 !== 0;
 
               return (
-                <div
+                <motion.div
                   key={rowIndex}
+                  variants={{
+                    hidden: { opacity: 0, y: 60 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+                  }}
                   className={`grid md:grid-cols-[1.7fr_1fr] gap-10 ${
                     reverse ? "md:grid-cols-[1fr_1.3fr]" : ""
                   }`}
@@ -93,10 +123,10 @@ export const ProjectsPage = () => {
                   {row.map((project) => (
                     <ProjectCard key={project.id} project={project} />
                   ))}
-                </div>
+                </motion.div>
               );
             })}
-        </div>
+        </motion.div>
       </div>
     </PageContainer>
   );

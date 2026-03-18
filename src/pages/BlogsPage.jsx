@@ -1,6 +1,7 @@
 import React from "react";
 import { PageContainer } from "../components/ui/PageContainer";
 import { BlogCard } from "../components/BlogCard/BlogCard";
+import { motion } from "framer-motion";
 
 const blogs = [
   {
@@ -55,21 +56,44 @@ export const BlogsPage = () => {
     <>
        <PageContainer>
 
-      <div className="px-10 py-20">
+      <div className="px-6 md:px-10 py-20 md:py-32 max-w-7xl mx-auto">
 
         {/* Title */}
-        <h1 className="text-7xl font-light mb-16">
+        <motion.h1 
+          initial={{ y: 40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-light mb-16"
+        >
           Blog
-        </h1>
+        </motion.h1>
 
         {/* Blog Cards */}
-        <div className="space-y-12">
+        <motion.div 
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2
+              }
+            }
+          }}
+          className="space-y-12"
+        >
 
           {blogs.map((blog) => (
-            <BlogCard key={blog.id} blog={blog} />
+            <motion.div key={blog.id} variants={{
+              hidden: { opacity: 0, y: 40 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+            }}>
+              <BlogCard blog={blog} />
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
 

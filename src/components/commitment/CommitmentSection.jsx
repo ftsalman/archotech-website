@@ -49,9 +49,11 @@ export const CommitmentSection = () => {
   const rightRef = useRef(null);
   const topRef = useRef(null);
   const bottomRef = useRef(null);
+  const bgRef = useRef(null); // ✅ background ref
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // LEFT TEXT ANIMATION
       gsap.from(leftRef.current, {
         y: 45,
         opacity: 0,
@@ -63,6 +65,7 @@ export const CommitmentSection = () => {
         },
       });
 
+      // RIGHT SIDE ANIMATION
       gsap.from(rightRef.current, {
         y: 55,
         opacity: 0,
@@ -73,8 +76,21 @@ export const CommitmentSection = () => {
           start: "top 72%",
         },
       });
+
+      // ✅ BACKGROUND PARALLAX
+      gsap.to(bgRef.current, {
+        scale: 1.1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
     }, sectionRef);
 
+    // AUTO SCROLL REVIEWS
     const topTween = gsap.to(topRef.current, {
       yPercent: -50,
       duration: 35,
@@ -96,8 +112,6 @@ export const CommitmentSection = () => {
     };
   }, []);
 
-  const renderStars = (rating) => "*".repeat(rating);
-
   const topRow = reviews.slice(0, 3);
   const bottomRow = reviews.slice(3);
 
@@ -105,55 +119,78 @@ export const CommitmentSection = () => {
     <section
       ref={sectionRef}
       className="relative text-white py-24 px-6 lg:px-20 overflow-hidden"
-      style={{
-        backgroundImage:
-          "url('/imgs/advantages-bg.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
     >
-      <div className="absolute inset-0 bg-black/50"></div>
+      {/* ✅ Background Image */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+        style={{
+          backgroundImage: "url('/imgs/advantages-bg.webp')",
+        }}
+      />
 
+      {/* ✅ Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* CONTENT */}
       <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-start">
+        {/* LEFT */}
         <div ref={leftRef} className="max-w-xl space-y-8">
           <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light leading-tight">
             Our commitment: <br /> quality and style
           </h2>
 
           <p className="text-lg text-white/80 leading-relaxed">
-            Whether you&apos;re looking for the perfect sofa to unwind after a
-            long day or unique decor pieces to add a personal touch, our
-            selection is designed to meet the highest standards of style and
-            durability.
+            Whether you're looking for the perfect sofa to unwind after a long
+            day or unique decor pieces to add a personal touch, our selection is
+            designed to meet the highest standards of style and durability.
           </p>
         </div>
 
-        <div ref={rightRef} className="grid grid-cols-2 gap-6 h-[500px] lg:h-[650px]">
+        {/* RIGHT SCROLLING REVIEWS */}
+        <div
+          ref={rightRef}
+          className="grid grid-cols-2 gap-6 h-[500px] lg:h-[650px]"
+        >
+          {/* TOP COLUMN */}
           <div className="overflow-hidden">
             <div ref={topRef} className="flex flex-col gap-6">
               {[...topRow, ...topRow].map((review, index) => (
                 <div
                   key={`${review.id}-${index}`}
-                  className="bg-white text-black p-6 rounded-2xl shadow-lg"
+                  className="bg-white/90 backdrop-blur-md border border-white/20 text-black p-6 md:p-8 shadow-lg"
                 >
-                  <div className="text-yellow-500 mb-3">{renderStars(review.rating)}</div>
-                  <p className="text-gray-700 mb-4">&quot;{review.text}&quot;</p>
-                  <p className="font-semibold">{review.name}</p>
+                  <div className="flex text-yellow-500 mb-6 gap-1 text-lg">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                  <p className="text-gray-700 mb-8 leading-relaxed text-sm md:text-base">
+                    "{review.text}"
+                  </p>
+                  <p className="uppercase tracking-widest text-xs text-gray-500">
+                    {review.name}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
+          {/* BOTTOM COLUMN */}
           <div className="overflow-hidden">
             <div ref={bottomRef} className="flex flex-col gap-6">
               {[...bottomRow, ...bottomRow].map((review, index) => (
                 <div
                   key={`${review.id}-${index}`}
-                  className="bg-white text-black p-6 rounded-2xl shadow-lg"
+                  className="bg-white/90 backdrop-blur-md border border-white/20 text-black p-6 md:p-8 shadow-lg"
                 >
-                  <div className="text-yellow-500 mb-3">{renderStars(review.rating)}</div>
-                  <p className="text-gray-700 mb-4">&quot;{review.text}&quot;</p>
-                  <p className="font-semibold">{review.name}</p>
+                  <div className="flex text-yellow-500 mb-6 gap-1 text-lg">
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                  <p className="text-gray-700 mb-8 leading-relaxed text-sm md:text-base">
+                    "{review.text}"
+                  </p>
+                  <p className="uppercase tracking-widest text-xs text-gray-500">
+                    {review.name}
+                  </p>
                 </div>
               ))}
             </div>
