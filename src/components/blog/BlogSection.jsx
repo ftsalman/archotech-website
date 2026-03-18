@@ -14,24 +14,21 @@ gsap.registerPlugin(ScrollTrigger);
 const blogs = [
   {
     id: 1,
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/6874b21e2f8c8e53bbed046c_0011-p-2000.webp",
+    image: "/projects/L15.jpg.jpeg",
     date: "November 20, 2024",
     title: "Uncover the cutting-edge substances revolutionizing",
     read: "5 min to read",
   },
   {
     id: 2,
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/6874b2995ed7074873d575a3_0041-p-2000.webp",
+    image: "/projects/shahir annara 11.jpg.jpeg",
     date: "December 5, 2024",
     title: "Discover how integrating nature into cityscapes is",
     read: "9 min to read",
   },
   {
     id: 3,
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/6874b2745001139fbf8e5b4b_0031-p-2000.webp",
+    image: "/projects/L17.jpg.jpeg",
     date: "July 30, 2024",
     title: "Explore how pre-fabricated units are revolutionizing",
     read: "5 min to read",
