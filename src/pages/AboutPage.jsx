@@ -34,6 +34,15 @@ export const AboutPage = () => {
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col items-start justify-center px-6 md:px-16 lg:px-40 text-white">
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-sm md:text-base tracking-widest uppercase text-gray-300 mb-3"
+          >
+            Homart Architects & Builders
+          </motion.p>
+
           <motion.h4
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}

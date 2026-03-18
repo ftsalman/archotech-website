@@ -91,14 +91,13 @@ export const ServicesPage = () => {
         </div>
       </div>
 
-      <Brands />
-
-      {/* WHAT WE OFFER */}
-      <OurServices />
-
-      <ScrollCards />
-
-      <OurProjects />
+      <div>
+        <Brands />
+        {/* WHAT WE OFFER */}
+        <OurServices />
+        <ScrollCards />
+        <OurProjects />
+      </div>
 
       {/* HOW WE HELP */}
       <section className="bg-[#f2f2f2] py-20 md:py-24 px-6 md:px-16 lg:px-40">

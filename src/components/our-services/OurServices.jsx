@@ -4,28 +4,24 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 const services = [
   {
     name: "Decoration",
-    image:
-      "https://i.pinimg.com/1200x/39/41/f1/3941f1550542b342fdfdcfd5718a92aa.jpg",
+    image: "/projects/2.png",
   },
   {
     name: "Exterior design",
-    image:
-      "https://i.pinimg.com/1200x/27/7a/b2/277ab208eef04b666469ad8c1d52664c.jpg",
+    image: "/projects/L13.jpg.jpeg",
   },
   {
     name: "Space planning",
-    image:
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=2070&auto=format&fit=crop",
+    image: "/projects/L15.jpg.jpeg",
   },
   {
     name: "Architecture design",
-    image:
-      "https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=2070&auto=format&fit=crop",
+    image: "/projects/shahir annara 07.jpg.jpeg",
   },
   {
     name: "Interior design",
     image:
-      "https://i.pinimg.com/1200x/8e/81/c2/8e81c219afed2245ddd189e408d186c0.jpg",
+      "https://i.pinimg.com/1200x/39/41/f1/3941f1550542b342fdfdcfd5718a92aa.jpg",
   },
 ];
 
@@ -54,9 +50,7 @@ export const OurServices = () => {
       >
         {/* LEFT IMAGE */}
         <div className="sticky top-24 lg:block">
-
           <div className="relative overflow-hidden h-[520px] ">
-
             <AnimatePresence mode="wait">
               <motion.img
                 key={activeImage}
@@ -72,7 +66,6 @@ export const OurServices = () => {
                 }}
               />
             </AnimatePresence>
-
           </div>
 
           {/* DESCRIPTION */}
@@ -83,15 +76,15 @@ export const OurServices = () => {
             className="mt-10 text-black/60 text-lg leading-relaxed space-y-6 font-sans"
           >
             <p>
-              Our services are focused on creating spaces that are both
-              visually stunning and highly functional. We work closely
-              with clients to tailor every detail to their needs.
+              Our services are focused on creating spaces that are both visually
+              stunning and highly functional. We work closely with clients to
+              tailor every detail to their needs.
             </p>
 
             <p>
-              Our approach combines creativity with practicality,
-              ensuring that the spaces we design are not only beautiful,
-              but also serve their intended purpose seamlessly.
+              Our approach combines creativity with practicality, ensuring that
+              the spaces we design are not only beautiful, but also serve their
+              intended purpose seamlessly.
             </p>
           </motion.div>
         </div>

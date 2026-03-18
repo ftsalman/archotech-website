@@ -11,6 +11,7 @@ import { CommitmentSection } from "../components/commitment/CommitmentSection";
 import { BlogSection } from "../components/blog/BlogSection";
 import { TalkSection } from "../components/talk/TalkSection";
 import { FoundersSection } from "../components/FoundersSection/FoundersSection";
+import { AwardsSection } from "../components/AwardsSection/AwardsSection";
 
 export const HomePage = () => {
   return (
@@ -33,17 +34,15 @@ export const HomePage = () => {
         {/* Projects */}
         <OurProjects />
 
-        <FoundersSection/>
+        <FoundersSection />
 
         {/*Sticky Gallery Section  */}
 
-     
-          <RuleSection />
+        <RuleSection />
 
-        
+        {/* Awards collections  */}
 
-        
-        
+        <AwardsSection />
 
         {/* FAQ SECTION */}
 

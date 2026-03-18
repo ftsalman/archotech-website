@@ -103,6 +103,12 @@ export const Footer = () => {
                     homartarchitects@gmail.com
                   </a>
                 </p>
+
+                <p>
+                  <a href="mailto:homartarchitects@gmail.com">
+                    hadddrawing@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
 
