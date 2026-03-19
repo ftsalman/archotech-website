@@ -114,7 +114,7 @@ export const ServicesPage = () => {
         <List
           data={help}
           uniqueKey="num"
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           render={(item, index) => (
             <motion.div
               key={item.num}
