@@ -22,17 +22,13 @@ export const AboutPage = () => {
     <PageContainer className="px-0 py-0">
       {/* HERO SECTION */}
       <div className="relative w-full h-[500px] md:h-[650px] lg:h-[750px]">
-        {/* Background */}
         <img
           src="/imgs/aboutUs.png"
           alt="About us"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/50"></div>
 
-        {/* Content */}
         <div className="absolute inset-0 flex flex-col items-start justify-center px-6 md:px-16 lg:px-40 text-white">
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -72,15 +68,73 @@ export const AboutPage = () => {
               size="lg"
               onClick={() => navigate("/contact")}
               className={`relative overflow-hidden px-8 rounded-full border font-semibold group
-              ${scrolled ? "border-black text-black" : "border-white text-black"}
-            `}
+              ${scrolled ? "border-black text-black" : "border-white text-black"}`}
             >
               <span className="relative z-10 transition duration-300 group-hover:text-black">
                 Get in Touch
               </span>
-
               <span className="absolute inset-0 bg-white scale-y-0 origin-bottom transition-transform duration-300 group-hover:scale-y-100"></span>
             </Button>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* ABOUT CONTENT SECTION */}
+      <div className="bg-white py-16 md:py-24 px-6 md:px-16 lg:px-40">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">
+              About Homart Builders
+            </p>
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6">
+              Building Trust Since 2016
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Established in January 2016 in the historic land of Thunjan,
+              Homart Builders LLP has grown into one of the most trusted names
+              in the architectural and construction industry. Over the years, we
+              have successfully completed more than 200 design and construction
+              projects, reflecting our commitment to innovation, quality, and
+              client satisfaction.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed mb-4">
+              Our firm operates from a fully equipped office with advanced
+              design and project management facilities. We are proud to have a
+              team of highly trained professionals and a large workforce of
+              skilled labourers who work together to deliver excellence in every
+              project we undertake.
+            </p>
+
+            <p className="text-gray-600 leading-relaxed">
+              At Homart Builders, our primary focus lies in commercial building
+              projects—creating modern, functional, and aesthetically refined
+              spaces. We also contribute to urban development and sustainable
+              city planning, ensuring long-term positive impact.
+            </p>
+          </motion.div>
+
+          {/* IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="w-full h-[350px] md:h-[450px] overflow-hidden rounded-lg"
+          >
+            <img
+              src="https://scontent.fcok6-1.fna.fbcdn.net/v/t39.30808-6/487215119_1098541808956361_2476614987670405591_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=b895b5&_nc_ohc=ByiLu06hOcEQ7kNvwFZtrmU&_nc_oc=AdpChmcbgUKwtbfNGVn8h6Ok9tWs_KCyT0_N6WVirPotRItiQWkQAZp4Bu-MGiNUDmQPQEVIaVG9DRTAuTIJCjW7&_nc_zt=23&_nc_ht=scontent.fcok6-1.fna&_nc_gid=KEXrSb4RlzaQWNM4hHufAA&_nc_ss=8&oh=00_Afz5cwm1YjK-0A0vr2gLkFkITVKupyUhC96QSrLddDh2RA&oe=69C14A94"
+              alt="Homart Builders"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </div>
       </div>
@@ -98,22 +152,21 @@ export const AboutPage = () => {
         </motion.h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* CARD */}
           {[
             {
               num: "01",
               title: "Expert design consultations",
-              desc: "Our experienced team of interior designers is here to guide you through the creative process. From selecting the perfect color palette to optimizing spatial layouts.",
+              desc: "Our experienced team of interior designers guides you through the creative process.",
             },
             {
               num: "02",
               title: "Customization for uniqueness",
-              desc: "Make your home truly yours with our customization options. Whether it's personalized furniture or bespoke decor.",
+              desc: "Make your home truly yours with personalized solutions and custom designs.",
             },
             {
               num: "03",
               title: "Quality assurance",
-              desc: "We take pride in delivering products of the highest quality. Our commitment to craftsmanship ensures every piece meets our standards.",
+              desc: "We ensure every project meets the highest standards of craftsmanship and durability.",
             },
           ].map((card, index) => (
             <motion.div

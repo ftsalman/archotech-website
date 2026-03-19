@@ -57,7 +57,7 @@ export const Navbar = () => {
                   <span className="translate-y-0 group-hover:-translate-y-full transition-transform duration-300">
                     {item.label}
                   </span>
-                  <span className="absolute top-full text-brand-red group-hover:-translate-y-full transition-transform duration-300">
+                  <span className="absolute top-full text-black font-semibold group-hover:-translate-y-full transition-transform duration-300">
                     {item.label}
                   </span>
                 </Link>

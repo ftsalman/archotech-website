@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export const ContactPage = () => {
   return (
     <section className="bg-[#f5f5f5] min-h-screen px-6 py-32 relative">
-
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -20,7 +19,6 @@ export const ContactPage = () => {
 
       {/* Cards */}
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-
         {/* Address Card */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -29,9 +27,7 @@ export const ContactPage = () => {
           viewport={{ once: true }}
           className="bg-white p-10 shadow-sm hover:shadow-xl transition-all text-center"
         >
-          <h3 className="text-xl font-semibold mb-8 text-gray-800">
-            Address
-          </h3>
+          <h3 className="text-xl font-semibold mb-8 text-gray-800">Address</h3>
 
           <p className="text-gray-600 leading-relaxed">
             Homart Architects & Builders <br />
@@ -47,12 +43,9 @@ export const ContactPage = () => {
           viewport={{ once: true }}
           className="bg-white p-10 shadow-sm hover:shadow-xl transition-all text-center"
         >
-          <h3 className="text-xl font-semibold mb-8 text-gray-800">
-            Contact
-          </h3>
+          <h3 className="text-xl font-semibold mb-8 text-gray-800">Contact</h3>
 
           <div className="text-gray-600 space-y-3">
-
             {/* Emails */}
             <a
               href="mailto:homartbuilder@gmail.com"
@@ -76,27 +69,17 @@ export const ContactPage = () => {
             </a>
 
             {/* Phones */}
-            <a
-              href="tel:+918075749002"
-              className="block hover:text-black pt-3"
-            >
+            <a href="tel:+918075749002" className="block hover:text-black pt-3">
               +91 8075749002 — Er. Jihad
             </a>
 
-            <a
-              href="tel:+918075979003"
-              className="block hover:text-black"
-            >
+            <a href="tel:+918075979003" className="block hover:text-black">
               +91 8075979003 — Er. Shafeeq
             </a>
 
-            <a
-              href="tel:+914944043248"
-              className="block hover:text-black"
-            >
+            <a href="tel:+914944043248" className="block hover:text-black">
               +91 494-4043248 — Office
             </a>
-
           </div>
         </motion.div>
 
@@ -108,17 +91,26 @@ export const ContactPage = () => {
           viewport={{ once: true }}
           className="bg-white p-10 shadow-sm hover:shadow-xl transition-all text-center"
         >
-          <h3 className="text-xl font-medium mb-8 text-gray-800">
-            Social
-          </h3>
+          <h3 className="text-xl font-medium mb-8 text-gray-800">Social</h3>
 
           <div className="flex justify-center gap-6 text-gray-600">
-            <a href="#" className="hover:text-black">
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/homartgroup/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black"
+            >
               Instagram
             </a>
 
-            <a href="#" className="hover:text-black">
-              Twitter
+            <a
+              href="https://www.facebook.com/photo/?fbid=1181233744020500&set=a.460152542795294"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-black"
+            >
+              Facebook
             </a>
 
             <a href="#" className="hover:text-black">
@@ -126,7 +118,6 @@ export const ContactPage = () => {
             </a>
           </div>
         </motion.div>
-
       </div>
 
       {/* Floating WhatsApp Button */}
@@ -138,7 +129,6 @@ export const ContactPage = () => {
       >
         <FaWhatsapp size={28} />
       </a>
-
     </section>
   );
 };
