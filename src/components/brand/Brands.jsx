@@ -13,10 +13,10 @@ export const Brands = () => {
       name: "Homart Architects & Builders",
       logo: "/imgs/homatr_logo.png",
     },
-    {
-      name: "HADD Homart-approvals and documentation",
-      logo: "/imgs/homatr_logo.png",
-    },
+    // {
+    // name: "HADD Homart-approvals and documentation",
+    // logo: "/imgs/homatr_logo.png",
+    // },
   ];
 
   const marqueeItems = Array(8).fill(companies).flat();
