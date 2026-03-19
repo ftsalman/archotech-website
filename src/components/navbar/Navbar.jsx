@@ -45,7 +45,7 @@ export const Navbar = () => {
 
               {/* Text */}
               <div className="flex flex-col select-none">
-                <span className="font-display font-extrabold text-2xl leading-none">
+                <span className="font-display  font-extrabold text-2xl leading-none">
                   HOMART
                 </span>
               </div>

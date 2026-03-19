@@ -4,24 +4,25 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 const services = [
   {
     name: "Decoration",
-    image: "/projects/2.png",
+    image:
+      "https://i.pinimg.com/1200x/39/41/f1/3941f1550542b342fdfdcfd5718a92aa.jpg",
   },
   {
     name: "Exterior design",
-    image: "/projects/L13.jpg.jpeg",
+    image: "/imgs/7.jpeg",
   },
   {
     name: "Space planning",
-    image: "/projects/L15.jpg.jpeg",
+    image:
+      "https://i.pinimg.com/1200x/d8/fa/51/d8fa51836e36e2f96618ed016c1b4fd9.jpg",
   },
   {
     name: "Architecture design",
-    image: "/projects/shahir annara 07.jpg.jpeg",
+    image: "/imgs/13.jpeg",
   },
   {
     name: "Interior design",
-    image:
-      "https://i.pinimg.com/1200x/39/41/f1/3941f1550542b342fdfdcfd5718a92aa.jpg",
+    image: "/imgs/10.jpeg",
   },
 ];
 

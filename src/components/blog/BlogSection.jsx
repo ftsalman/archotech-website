@@ -14,21 +14,21 @@ gsap.registerPlugin(ScrollTrigger);
 const blogs = [
   {
     id: 1,
-    image: "/projects/L15.jpg.jpeg",
+    image: "/imgs/1.jpeg",
     date: "November 20, 2024",
     title: "Uncover the cutting-edge substances revolutionizing",
     read: "5 min to read",
   },
   {
     id: 2,
-    image: "/projects/shahir annara 11.jpg.jpeg",
+    image: "/imgs/3.jpeg",
     date: "December 5, 2024",
     title: "Discover how integrating nature into cityscapes is",
     read: "9 min to read",
   },
   {
     id: 3,
-    image: "/projects/L17.jpg.jpeg",
+    image: "/imgs/5.jpeg",
     date: "July 30, 2024",
     title: "Explore how pre-fabricated units are revolutionizing",
     read: "5 min to read",

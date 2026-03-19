@@ -6,7 +6,7 @@ export const PROJECTS_DATA = [
       "A peaceful modern home surrounded by nature, designed to bring the outdoors inside.",
    
     heroImage:
-      "/projects/L15.jpg.jpeg",
+      "/imgs/1.jpeg",
 
     client: "Private Client",
     budget: "$1.5 million",
@@ -33,7 +33,7 @@ export const PROJECTS_DATA = [
     description:
       "A warm minimalist dining space with natural wood textures and soft lighting.",
 
-    heroImage:"/projects/L17.jpg.jpeg",
+    heroImage:"/imgs/3.jpeg",
   
 
     client: "Urban Living",
@@ -62,7 +62,7 @@ export const PROJECTS_DATA = [
       "A clean and elegant living space focused on organic shapes and neutral tones.",
 
     heroImage:
-      "/projects/SABIQ EXT 1 DAY VIEW.png",
+      "/imgs/11.jpeg",
 
     client: "Minimal Studio",
     budget: "$600,000",
@@ -90,7 +90,7 @@ export const PROJECTS_DATA = [
       "A compact urban interior that balances open flow with high-end comfort.",
 
     heroImage:
-      "/projects/shahir annara 07.jpg.jpeg",
+      "https://i.pinimg.com/736x/fa/91/27/fa9127b701a4f8979a4619a213fd4e24.jpg",
 
     client: "City Living Co.",
     budget: "$700,000",
@@ -111,13 +111,13 @@ export const PROJECTS_DATA = [
   },
 
   {
-    id: "5",
+    id: "6",
     title: "Lake View Home",
     description:
       "A bright residence designed around natural light and uninterrupted views.",
 
     heroImage:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686ceac6ecfafe31230155e3_012p.webp",
+      "/imgs/6.jpeg",
 
     client: "Private Client",
     budget: "$1.2 million",
@@ -135,5 +135,31 @@ export const PROJECTS_DATA = [
       "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686ceac6ecfafe31230155e3_012p.webp",
       "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686ce92f749222f9928a6814_019p.webp",
     ],
+
+    
   },
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+
+  
+  
+
 ];

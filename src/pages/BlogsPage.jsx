@@ -11,7 +11,7 @@ const blogs = [
     description:
       "Explore the pivotal shifts and exciting innovations shaping tomorrow's architecture.",
     readTime: "5 min to read",
-    image: "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/6874b1f87d199e1c9937c4d7_0021.webp",
+    image: "/imgs/1.jpeg",
   },
   {
     id: 2,
@@ -20,25 +20,23 @@ const blogs = [
     description:
       "Explore the latest architectural inspirations from modern structures.",
     readTime: "4 min to read",
-    image: "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/6874b21e2f8c8e53bbed046c_0011.webp",
+    image: "/imgs/3.jpeg",
   },
   {
     id: 3,
     title: "Interior Architecture Design",
     date: "October 20, 2024",
-    description:
-      "Understanding modern interior architecture concepts.",
+    description: "Understanding modern interior architecture concepts.",
     readTime: "6 min to read",
-    image: "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/6874b2995ed7074873d575a3_0041.webp",
+    image: "/imgs/5.jpeg",
   },
   {
     id: 4,
     title: "Concrete Architecture Style",
     date: "October 15, 2024",
-    description:
-      "Concrete architecture continues to influence modern design.",
+    description: "Concrete architecture continues to influence modern design.",
     readTime: "5 min to read",
-    image: "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/6874b2995ed7074873d575a3_0041.webp",
+    image: "/imgs/6.jpeg",
   },
   {
     id: 5,
@@ -47,57 +45,54 @@ const blogs = [
     description:
       "Exploring the future of urban architecture and sustainability.",
     readTime: "7 min to read",
-    image: "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/68763f07a8769168f2894756_00111-p-2000.webp",
+    image: "/imgs/7.jpeg",
   },
 ];
 
 export const BlogsPage = () => {
   return (
     <>
-       <PageContainer>
+      <PageContainer>
+        <div className="px-6 md:px-10 py-20 md:py-32 max-w-7xl mx-auto">
+          {/* Title */}
+          <motion.h1
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-light mb-16"
+          >
+            Blog
+          </motion.h1>
 
-      <div className="px-6 md:px-10 py-20 md:py-32 max-w-7xl mx-auto">
-
-        {/* Title */}
-        <motion.h1 
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-light mb-16"
-        >
-          Blog
-        </motion.h1>
-
-        {/* Blog Cards */}
-        <motion.div 
-          initial="hidden"
-          animate="show"
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.2
-              }
-            }
-          }}
-          className="space-y-12"
-        >
-
-          {blogs.map((blog) => (
-            <motion.div key={blog.id} variants={{
-              hidden: { opacity: 0, y: 40 },
-              show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-            }}>
-              <BlogCard blog={blog} />
-            </motion.div>
-          ))}
-
-        </motion.div>
-
-      </div>
-
-    </PageContainer>
+          {/* Blog Cards */}
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={{
+              hidden: { opacity: 0 },
+              show: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.2,
+                },
+              },
+            }}
+            className="space-y-12"
+          >
+            {blogs.map((blog) => (
+              <motion.div
+                key={blog.id}
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+                }}
+              >
+                <BlogCard blog={blog} />
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </PageContainer>
     </>
   );
 };

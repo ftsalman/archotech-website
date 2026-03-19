@@ -13,7 +13,7 @@ const slides = [
     title: "HADD",
     text: "Homart Approvals and Documentation Division provides expert support for approvals, permits, and technical drawings, ensuring smooth and hassle-free project execution.",
     image:
-      "https://i.pinimg.com/736x/41/b0/44/41b044cb9856e20792bf124b08d974d4.jpg",
+      "https://cdn.prod.website-files.com/69155df8219de2cb7924d494/69158242d3a4d61ac864b4f6_backgraound-1.webp",
   },
 
   {
