@@ -30,16 +30,24 @@ export const Navbar = () => {
         ${scrolled ? "bg-white shadow-md" : "bg-transparent backdrop-blur-[50px]"}`}
       >
         <div className="container mx-auto px-4 sm:px-8 h-[70px] flex items-center justify-between">
-          {/* LOGO */}
           <Link to="/">
             <div
-              className={`transition-colors duration-300 ${scrolled ? "text-black" : "text-white"}`}
+              className={`flex items-center justify-center gap-2 transition-colors duration-300 ${
+                scrolled ? "text-black" : "text-white"
+              }`}
             >
+              {/* Logo */}
+              <img
+                src="/imgs/logo.png"
+                alt="Homart Logo"
+                className="h-10 w-auto object-contain"
+              />
+
+              {/* Text */}
               <div className="flex flex-col select-none">
-                <span className="font-display italic font-light text-4xl leading-none">
-                  Homart
+                <span className="font-display italic font-light text-2xl leading-none">
+                  HOMART
                 </span>
-                {/* <span className="font-display font-medium text-2xl tracking-tighter leading-none -mt-1">forma</span> */}
               </div>
             </div>
           </Link>
