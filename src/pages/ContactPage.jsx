@@ -30,8 +30,8 @@ export const ContactPage = () => {
           <h3 className="text-xl font-semibold mb-8 text-gray-800">Address</h3>
 
           <p className="text-gray-600 leading-relaxed">
-            Homart Architects & Builders <br />
-            Kerala, India
+            HOMART BUILDERS LLP 2ND FLOOR 15/2327/A31-KM MALL RING ROAD -TIRUR,
+            MALAPPURAM, KERALA-676101
           </p>
         </motion.div>
 
