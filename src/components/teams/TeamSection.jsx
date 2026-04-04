@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { List } from "../ui/List";
 import { Card } from "../ui/Card";
@@ -9,38 +8,63 @@ import { IconArrowForward } from "../../assets/icons/interfaceIcons2";
 const team = [
   {
     id: 1,
-    name: "Alexandra Turner",
-    role: "Interior design director",
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686cba759671962810e71156_t001.webp",
+    name: "Ar.Abhinav",
+    role: "Homart Architects",
+    image: "/imgs/stff1.png",
   },
   {
     id: 2,
-    name: "Jonathan Harris",
-    role: "Senior furniture specialist",
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686cbb1598718f0d0aae69ba_t002.webp",
+    name: "Ar.Swafvana",
+    role: "Homart Architects",
+    image: "/imgs/staff2.png",
   },
   {
     id: 3,
-    name: "Emil Rodriguez",
-    role: "Customer manager",
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686cdb52fb6c1d10dc89412e_t003.webp",
+    name: "Er.Safuvan",
+    role: "Project engineer Homart Builder",
+    image: "/imgs/staff10.png",
   },
   {
     id: 4,
-    name: "Olivia Foster",
-    role: "Marketing & Branding",
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686cd85c53bc00829cd551b4_t004.webp",
+    name: "Er.Arshida",
+    role: "Junior Draughtman HADD",
+    image: "/imgs/staff4.png",
   },
   {
     id: 5,
-    name: "Daniel Carter",
-    role: "Product Sourcing coordinator",
-    image:
-      "https://cdn.prod.website-files.com/676011e38753f7d22eefbfdf/686cda7d0e7ac6d9e8dbcf99_t005.webp",
+    name: "Abhinav",
+    role: "Architectural Designer",
+    image: "/imgs/staff6.png",
+  },
+  {
+    id: 6,
+    name: "Swafwana",
+    role: "Architectural Designer",
+    image: "/imgs/staff5.png",
+  },
+  {
+    id: 7,
+    name: "Er.Nuhmanul Hakeem",
+    role: "structural Draughtman homart builders",
+    image: "/imgs/staff7.png",
+  },
+  {
+    id: 8,
+    name: "Sidin palliyeri",
+    role: "Chief Engineer",
+    image: "/imgs/staff8.png",
+  },
+  {
+    id: 9,
+    name: "MUHAMMED NASEEM HAJ",
+    role: "ACCOUNTANT",
+    image: "/imgs/staff9.png",
+  },
+  {
+    id: 10,
+    name: "Er.Ayisha Hiba",
+    role: "Senior EngineerHADD",
+    image: "/imgs/staff3.png",
   },
 ];
 
@@ -105,7 +129,6 @@ export const TeamSection = () => {
 
   return (
     <section className="py-20 md:py-32 px-4 lg:px-12 space-y-12 overflow-hidden bg-brand-light text-black">
-
       {/* Title */}
       <motion.h2
         className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter"
@@ -191,4 +214,3 @@ export const TeamSection = () => {
     </section>
   );
 };
-
