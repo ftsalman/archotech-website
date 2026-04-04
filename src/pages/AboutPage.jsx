@@ -131,7 +131,7 @@ export const AboutPage = () => {
             className="w-full h-[350px] md:h-[450px] overflow-hidden rounded-lg"
           >
             <img
-              src="https://scontent.fcok6-1.fna.fbcdn.net/v/t39.30808-6/487215119_1098541808956361_2476614987670405591_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=b895b5&_nc_ohc=ByiLu06hOcEQ7kNvwFZtrmU&_nc_oc=AdpChmcbgUKwtbfNGVn8h6Ok9tWs_KCyT0_N6WVirPotRItiQWkQAZp4Bu-MGiNUDmQPQEVIaVG9DRTAuTIJCjW7&_nc_zt=23&_nc_ht=scontent.fcok6-1.fna&_nc_gid=KEXrSb4RlzaQWNM4hHufAA&_nc_ss=8&oh=00_Afz5cwm1YjK-0A0vr2gLkFkITVKupyUhC96QSrLddDh2RA&oe=69C14A94"
+              src="https://i.pinimg.com/736x/2e/01/15/2e01156000af9220e5d367866c21cfe2.jpg"
               alt="Homart Builders"
               className="w-full h-full object-cover"
             />
