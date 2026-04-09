@@ -8,63 +8,69 @@ import { IconArrowForward } from "../../assets/icons/interfaceIcons2";
 const team = [
   {
     id: 1,
-    name: "Ar.Abhinav",
+    name: "Abhinav",
     role: "Homart Architects",
     image: "/imgs/stff1.png",
   },
   {
     id: 2,
-    name: "Ar.Swafvana",
+    name: "Safuwana",
     role: "Homart Architects",
     image: "/imgs/staff2.png",
   },
+
   {
     id: 3,
-    name: "Er.Safuvan",
-    role: "Project engineer Homart Builder",
-    image: "/imgs/staff10.png",
-  },
-  {
-    id: 4,
-    name: "Er.Arshida",
-    role: "Junior Draughtman HADD",
-    image: "/imgs/staff4.png",
-  },
-  {
-    id: 5,
-    name: "Abhinav",
-    role: "Architectural Designer",
-    image: "/imgs/staff6.png",
-  },
-  {
-    id: 6,
-    name: "Swafwana",
-    role: "Architectural Designer",
-    image: "/imgs/staff5.png",
-  },
-  {
-    id: 7,
-    name: "Er.Nuhmanul Hakeem",
-    role: "structural Draughtman homart builders",
-    image: "/imgs/staff7.png",
-  },
-  {
-    id: 8,
-    name: "Sidin palliyeri",
-    role: "Chief Engineer",
-    image: "/imgs/staff8.png",
-  },
-  {
-    id: 9,
     name: "MUHAMMED NASEEM HAJ",
     role: "ACCOUNTANT",
     image: "/imgs/staff9.png",
   },
+
+  {
+    id: 4,
+    name: "Arshida",
+    role: "Junior Draughtsman at  HADD",
+    image: "/imgs/staff4.png",
+  },
+  {
+    id: 5,
+    name: "Mohammed Ashique",
+    role: "Project Coordinator at Homart Builders",
+    image: "/imgs/staff11.png",
+  },
+
+  {
+    id: 6,
+    name: "Ayisha Hiba",
+    role: "Senior Engineer at HADD",
+    image: "/imgs/staff3.png",
+  },
+
+  {
+    id: 7,
+    name: "Nuhmanul Hakeem",
+    role: "structural Draughtman at homart builders",
+    image: "/imgs/staff7.png",
+  },
+
+  {
+    id: 8,
+    name: "Rameesha Sherin",
+    role: "Senior Engineer at HADD",
+    image: "/imgs/staff12.png",
+  },
+
+  {
+    id: 9,
+    name: "Safuwan",
+    role: "Project engineer  at Homart Builder",
+    image: "/imgs/staff10.png",
+  },
   {
     id: 10,
-    name: "Er.Ayisha Hiba",
-    role: "Senior EngineerHADD",
-    image: "/imgs/staff3.png",
+    name: "Sidin palliyeri",
+    role: "Chief Engineer at Homart Builders & HADD",
+    image: "/imgs/staff8.png",
   },
 ];
 
@@ -149,7 +155,7 @@ export const TeamSection = () => {
         <List
           data={team}
           uniqueKey="id"
-          className="flex gap-6"
+          className="flex  gap-6"
           render={(item, index) => (
             <motion.div
               key={item.id}
