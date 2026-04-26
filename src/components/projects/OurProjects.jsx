@@ -68,7 +68,7 @@ export const OurProjects = () => {
           animate={isInView ? "show" : "hidden"}
         >
           <List
-            data={PROJECTS_DATA}
+            data={PROJECTS_DATA.slice(0, 6)}
             uniqueKey="id"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             render={(itemData, idx) => (
